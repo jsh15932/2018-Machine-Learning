@@ -61,15 +61,17 @@ for step in range(4001):
 # Hypothesis에 값을 대입하여 추측
 
 
-data = read_csv('priceWeather2018.csv', sep=',')
+data1 = read_csv('priceWeather2018.csv', sep=',')
 
-xy = np.array(data,dtype=np.float32)
-x_data = xy[:, 0:-1]
+xy1 = np.array(data1,dtype=np.float32)
+x_data1 = xy1[:, 0:-1]
 #print("Your score will be ", sess.run(hypothesis, feed_dict={X: x_data}))
 
-
 dict = sess.run(hypothesis, feed_dict={X: x_data})
+dict1 = sess.run(hypothesis, feed_dict={X: x_data1})
+
 plt.plot(dict)
+plt.plot(dict1)
 plt.show()
 #price = {"fd"}
 #df = pd.DataFrame(dict, index=None, columns=price);
@@ -79,7 +81,7 @@ plt.show()
 #
 # Your score will be  [[ 167.70051575]]
 # Other scores will be  [[ 120.13847351] [ 196.6124115 ]]
-
+#
 db = pymysql.connect(
         host='localhost',
         port=3306,
