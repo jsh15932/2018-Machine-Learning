@@ -45,7 +45,7 @@
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">
+      <a class="navbar-brand" href="#" target="_blank">
         <strong class="hangul">VEGITA</strong>
       </a>
 
@@ -254,7 +254,7 @@
           <!--Grid column-->
           <div class="col-md-6 mb-4">
 
-            <img src="https://mdbootstrap.com/img/Marketing/mdb-press-pack/mdb-main.jpg" class="img-fluid z-depth-1-half" alt="">
+            <img src="{{url_for('static', filename='img/graph.png')}}" class="img-fluid z-depth-1-half" alt="">
 
           </div>
           <!--Grid column-->
@@ -307,7 +307,7 @@
 
             <form action="/" method="post">
               <!-- Default form group -->
-              <form>
+
                   <!-- Default input -->
                   <div class="form-group">
                       <label style="font-family: 'Nanum Barun Gothic'" for="formGroupExampleInput">평균 온도</label>
@@ -328,7 +328,6 @@
                       <label style="font-family: 'Nanum Barun Gothic'" for="formGroupExampleInput">강수량</label>
                       <input style="font-family: 'Nanum Barun Gothic'" type="text" name="rain_fall" class="form-control" id="formGroupExampleInput" placeholder="강수량을 입력하세요.">
                   </div>
-              </form>
               <!-- Default form group -->
               <button style="font-family: 'Nanum Barun Gothic' !important;" type="submit" class="btn btn-primary btn-md pull-right">예측하기</button>
 
@@ -342,7 +341,7 @@
 
             <p class="h5 text-center mb-4" style="font-family: 'Nanum Barun Gothic'">예측 결과</p>
             {% if price %}
-              {{ price }}
+              <h5 class="text-center mt-3">예측된 가격은 {{ price }}원입니다.</h5>
             {% endif %}
           </div>
           <!--/Grid column-->
