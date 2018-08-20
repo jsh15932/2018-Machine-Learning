@@ -8,6 +8,14 @@
     <title>Material Design Bootstrap</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/boost.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
@@ -21,7 +29,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
       <!-- Navbar brand -->
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">메뉴</a>
 
       <!-- Collapse button -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
@@ -35,24 +43,20 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                  <a class="nav-link" href="#">Home
+                  <a class="nav-link" href="#">메인
                       <span class="sr-only">(current)</span>
                   </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#">Features</a>
+                  <a class="nav-link" href="#">기반 기술</a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Pricing</a>
-              </li>
-
               <!-- Dropdown -->
               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">다운로드</a>
                   <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="#">가격 데이터</a>
+                      <a class="dropdown-item" href="#">변수 데이터</a>
+                      <a class="dropdown-item" href="#">출처</a>
                   </div>
               </li>
 
@@ -61,7 +65,7 @@
 
           <form class="form-inline">
               <div class="md-form my-0">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                  <input class="form-control mr-sm-2" type="text" placeholder="검색" aria-label="Search">
               </div>
           </form>
       </div>
@@ -71,57 +75,18 @@
   <!--/.Navbar-->
 
   <!-- Default form login -->
-  <form class="text-center border border-light p-5">
+  <!-- Material column sizing form -->
+  <!-- Default horizontal form -->
 
-      <p class="h4 mb-4">Sign in</p>
+  <!-- Default horizontal form -->
+<!-- Material column sizing form -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-6">
 
-      <!-- Email -->
-      <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
-
-      <!-- Password -->
-      <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
-
-      <div class="d-flex justify-content-around">
-          <div>
-              <!-- Remember me -->
-              <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
-                  <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
-              </div>
-          </div>
-          <div>
-              <!-- Forgot password -->
-              <a href="">Forgot password?</a>
-          </div>
-      </div>
-
-      <!-- Sign in button -->
-      <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
-
-      <!-- Register -->
-      <p>Not a member?
-          <a href="">Register</a>
-      </p>
-
-      <!-- Social login -->
-      <p>or sign in with:</p>
-
-      <a type="button" class="light-blue-text mx-2">
-          <i class="fa fa-facebook"></i>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-          <i class="fa fa-twitter"></i>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-          <i class="fa fa-linkedin"></i>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-          <i class="fa fa-github"></i>
-      </a>
-
-  </form>
-
-  <canvas id="lineChart"></canvas>
+      <div id="container1"></div>
+    </div>
+  </div>
   <!-- Default form login -->
   <!-- Footer -->
   <footer class="page-footer font-small blue pt-4">
@@ -136,9 +101,7 @@
           <div class="col-md-6 mt-md-0 mt-3">
 
             <!-- Content -->
-            <h5 class="text-uppercase">Footer Content</h5>
-            <p>Here you can use rows and columns here to organize your footer content.</p>
-
+            <h4 class="text-uppercase">2018 지역선도사업 프로젝트</h4>
           </div>
           <!-- Grid column -->
 
@@ -148,48 +111,16 @@
           <div class="col-md-3 mb-md-0 mb-3">
 
               <!-- Links -->
-              <h5 class="text-uppercase">Links</h5>
-
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!">Link 4</a>
-                </li>
-              </ul>
+              <h6 class="text-uppercase">팀장&nbsp;&nbsp; 한지섭 &nbsp;&nbsp;충북대학교</h6>
+              <h6 class="text-uppercase">팀원&nbsp;&nbsp; 김연우 &nbsp;&nbsp;충북대학교</h6>
+              <h6 class="text-uppercase">팀원&nbsp;&nbsp; 명평윤 &nbsp;&nbsp;한국교통대학교</h6>
+              <h6 class="text-uppercase">팀원&nbsp;&nbsp; 나동빈 &nbsp;&nbsp;한국교원대학교</h6>
+              <h6 class="text-uppercase">팀원&nbsp;&nbsp; 장승훈 &nbsp;&nbsp;한국교원대학교</h6>
 
             </div>
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-
-              <!-- Links -->
-              <h5 class="text-uppercase">Links</h5>
-
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!">Link 4</a>
-                </li>
-              </ul>
-
-            </div>
             <!-- Grid column -->
 
         </div>
@@ -200,7 +131,6 @@
 
       <!-- Copyright -->
       <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com</a>
       </div>
       <!-- Copyright -->
 
@@ -216,40 +146,80 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-    <script>
-    //line
-    var ctxL = document.getElementById("lineChart").getContext('2d');
-    var myLineChart = new Chart(ctxL, {
-        type: 'line',
-        data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [
-                {
-                    label: "My First dataset",
-                    fillColor: "rgba(220,220,220,0.2)",
-                    strokeColor: "rgba(220,220,220,1)",
-                    pointColor: "rgba(220,220,220,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [65, 59, 80, 81, 56, 55, 40]
-                },
-                {
-                    label: "My Second dataset",
-                    fillColor: "rgba(151,187,205,0.2)",
-                    strokeColor: "rgba(151,187,205,1)",
-                    pointColor: "rgba(151,187,205,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(151,187,205,1)",
-                    data: [28, 48, 40, 19, 86, 27, 90]
-                }
-            ]
-        },
-        options: {
-            responsive: true
+
+    <script type="text/javascript">
+
+
+function getData(n) {
+    var arr = [],
+        i,
+        x,
+        a,
+        b,
+        c,
+        spike;
+    for (
+        i = 0, x = Date.UTC(new Date().getUTCFullYear(), 0, 1) - n * 36e5;
+        i < n;
+        i = i + 1, x = x + 36e5
+    ) {
+        if (i % 100 === 0) {
+            a = 2 * Math.random();
         }
-    });
+        if (i % 1000 === 0) {
+            b = 2 * Math.random();
+        }
+        if (i % 10000 === 0) {
+            c = 2 * Math.random();
+        }
+        if (i % 50000 === 0) {
+            spike = 10;
+        } else {
+            spike = 0;
+        }
+        arr.push([
+            x,
+            2 * Math.sin(i / 100) + a + b + c + spike + Math.random()
+        ]);
+    }
+    return arr;
+}
+var n = 500000,
+    data = getData(n);
+
+
+console.time('line');
+Highcharts.chart('container1', {
+
+    chart: {
+        zoomType: 'x'
+    },
+
+    title: {
+        text: '연도별 실제 가격 데이터와 예측 데이터의 오차 현황'
+    },
+
+    subtitle: {
+        text: '2010 ~ 2017'
+    },
+
+    tooltip: {
+        valueDecimals: 2
+    },
+
+    xAxis: {
+        type: 'datetime'
+    },
+
+    series: [{
+        data: data,
+        lineWidth: 0.5,
+        name: '가격 변화'
+    }]
+
+});
+console.timeEnd('line');
+
     </script>
 </body>
 
