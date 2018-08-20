@@ -15,7 +15,8 @@ CREATE TABLE CABBAGE(
 ### Web Server 실행 명령어
 ```
 # 플라스크 웹 서버 폴더로 이동합니다.
-cd 'Flask Web Server'
+cd "Flask Web Server"
+
 # 웹 서버를 실행합니다.
 python server.py
 ```

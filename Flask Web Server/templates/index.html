@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+</head>
+<body>
+    <form action="/" method="post">
+        평균 기온: <input type="text" name="avg_temp">
+        최저 기온: <input type="text" name="min_temp">
+        최고 기온: <input type="text" name="max_temp">
+        강수량: <input type="text" name="rain_fall">
+        <input type="submit">
+    </form>
+    {% if price %}
+        {{ price }}
+    {% endif %}
+</body>
+</html>
