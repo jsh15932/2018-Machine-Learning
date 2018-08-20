@@ -8,12 +8,13 @@ app = Flask(__name__)
 def index():
     if request.method == 'GET':
         return render_template('index.html')
-    else:
+    if request.method == 'POST':
         avg_temp = int(request.form['avg_temp'])
         min_temp = int(request.form['min_temp'])
         max_temp = int(request.form['max_temp'])
         rain_fall = int(request.form['rain_fall'])
 
+        # 데이터 처리
         price = 1000
         return render_template('index.html', price=price)
 
