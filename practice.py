@@ -4,17 +4,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from pandas.io.parsers import read_csv
-#데이터 불러오기
 
-
+# 데이터 불러오기
 data_frame = pd.read_excel("testweather.xlsx", sheet = 1)
 
-#최고기온, 최저기온 변수 제거
+# 최고기온, 최저기온 변수 제거
 
-
-
-#하이퍼 파라미터 설정
-
+# 하이퍼 파라미터 설정
 timesteps = seq_length = 6
 data_dim = 4
 hidden_dim = 4
@@ -24,8 +20,7 @@ iterations = 800
 
 #데이터 조절
 
-#Framework 제작
-
+# Framework 제작
 x = data_frame.values
 y = data_frame["avgPrice"].values
 
