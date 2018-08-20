@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+h1, h2, h3, h4 {
+  font-family: 'Jeju Gothic';
+}
+
+body {
+  font-family: 'Jeju Gothic';
+}
+
+/* 실질적인 각 내비게이션 메뉴들의 색상 등을 정의 */
+#sidebar .list-group-item {
+  background-color: #333333;
+  color= #acacac;
+  border-color: #1c1c1c;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+/* 내비게이션 아래 끝까지 나열 */
+#sidebar .list-group {
+  background-color: #333333;
+  min-height: 100vh;
+}
+
+/* 메뉴를 선택했을 때 부모 요소의 색상을 변경해 줌 */
+#sidebar .list-group .list-group-item[aria-expanded="true"] {
+  background-color: #1c1c1c;
+}
+
+/* 메뉴를 선택했을 때 자식 요소의 색상을 변경해 줌 */
+#sidebar .list-group .list-group-item:not(.collapsed) {
+  background-color: #1c1c1c;
+}
+
+/* 부가 설정 */
+
+#sidebar {
+  overflow: hidden;
+  z-index: 2;
+}
+
+@media (max-width:768px){
+  /* 작은 화면에서는 왼쪽 내비게이션 너비를 정해진 크기 설정 */
+  #sidebar {
+    min-width: 35px;
+    max-width: 40px;
+    overflow-y: auto;
+    overflow-x: visible;
+    transition: all 0.25s ease;
+    transform: translateX(0px);
+    position: fixed;
+  }
+
+  /* 작은 화면에서 서브 메뉴를 열었을 때 글자가 보이도록 함 */
+  #sidebar, #sidebar .list-group {
+    min-width: 35px;
+    overflow: visible;
+  }
+  #sidebar .list-group .collapse.show, #sidebar .list-group .collapsing {
+    position: relative;
+    z-index : 1;
+    width : 190px;
+    top : 0;
+  }
+  /* 작아졌을 때 아이콘을 가운데로 정렬해 줌 */
+  #sidebar .list-group > .list-group-item {
+    text-align: center;
+    padding: .75rem .5rem;
+  }
+  #sidebar::-webkit-scrollbar {width:0px;}
+}
+
+#main {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+@media (max-width:768px) {
+  #main {
+    margin-left: 38px;
+  }
+}
+
+@media (max-width:560px) {
+  .mobile {
+    display:none;
+  }
+}
+
+.boardTitle {
+  background-color: #efefef;
+  padding:6px;
+}
+.boardContent {
+  background-color: #efefef;
+  padding:6px;
+  height:320px;
+  overflow-y: scroll;
+}
