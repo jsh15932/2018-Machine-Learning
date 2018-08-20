@@ -17,7 +17,7 @@ def MinMaxScaler(data):
 model = tf.global_variables_initializer();
 
 
-data = read_csv('priceWeather.csv', sep=',')
+data = read_csv('priceWeather2010~2015.csv', sep=',')
 
 print(data)
 xy = np.array(data,dtype=np.float32)
@@ -61,7 +61,7 @@ for step in range(4001):
 # Hypothesis에 값을 대입하여 추측
 
 
-data1 = read_csv('priceWeather2018.csv', sep=',')
+data1 = read_csv('priceWeather2016~2017.csv', sep=',')
 
 xy1 = np.array(data1,dtype=np.float32)
 x_data1 = xy1[:, 0:-1]
@@ -82,47 +82,47 @@ plt.show()
 # Your score will be  [[ 167.70051575]]
 # Other scores will be  [[ 120.13847351] [ 196.6124115 ]]
 #
-db = pymysql.connect(
-        host='localhost',
-        port=3306,
-        user='root',
-        passwd='1234',
-        db='test',
-        charset='utf8',autocommit=True)
 # db = pymysql.connect(
-#         host='jisub3054.cafe24.com',
+#         host='localhost',
 #         port=3306,
-#         user='jisub3054',
-#         passwd='1q2w3e4r..',
-#         db='jisub3054',
-#         charset='utf8')
-
-import codecs
-
-conn = db.cursor()
-#string_array  =  str ( dict . flatten () . tolist ()) [ 1 : - 1 ]
-
-df = pd.DataFrame(dict)
-df.to_csv("file_test.csv")#엑셀파일로 저장
-
-data = open('file_test.csv')
-reader = csv.reader(data)
-col1=[]
-col2=[]
-
-for line in reader:
-    col1.append(line[0])
-    col2.append(line[1])
-
-def insert_func():
-    for i in range(1,len(col2)):
-        print(col2[i])
-        sql = "INSERT INTO test(price) VALUES(%s)"
-
-        conn.execute(sql,(col2[i]))
-        db.commit()
-
-
-insert_func()
-
-db.close()
+#         user='root',
+#         passwd='1234',
+#         db='test',
+#         charset='utf8',autocommit=True)
+# # db = pymysql.connect(
+# #         host='jisub3054.cafe24.com',
+# #         port=3306,
+# #         user='jisub3054',
+# #         passwd='1q2w3e4r..',
+# #         db='jisub3054',
+# #         charset='utf8')
+#
+# import codecs
+#
+# conn = db.cursor()
+# #string_array  =  str ( dict . flatten () . tolist ()) [ 1 : - 1 ]
+#
+# df = pd.DataFrame(dict)
+# df.to_csv("file_test.csv")#엑셀파일로 저장
+#
+# data = open('file_test.csv')
+# reader = csv.reader(data)
+# col1=[]
+# col2=[]
+#
+# for line in reader:
+#     col1.append(line[0])
+#     col2.append(line[1])
+#
+# def insert_func():
+#     for i in range(1,len(col2)):
+#         print(col2[i])
+#         sql = "INSERT INTO test(price) VALUES(%s)"
+#
+#         conn.execute(sql,(col2[i]))
+#         db.commit()
+#
+#
+# insert_func()
+#
+# db.close()
